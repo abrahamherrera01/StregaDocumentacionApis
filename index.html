@@ -130,7 +130,7 @@
                         <h5>HTTP Request</h5>
                         <p>
                             <span class="method post">POST</span>
-                            <span class="method url">https://abcars.mx/abcars-backend/api/login</span>
+                            <span class="method url">http://localhost/api/login</span>
                         </p>
                         <h5>Query Parameters</h5>
                         <table>
@@ -145,10 +145,9 @@
                                     <td>email</td>
                                     <td><span class="parameters_type">string</span> <em> <span
                                                 class="parameters_example">Example:
-                                                Herrera@abcars.com </span>
-                                            <br>Un email válido de un usuario activo de bdc.stregasystem.com
+                                                revisor@strega.com </span>
+                                            <br>Un email válido de un usuario activo de strega
                                     </td>
-
                                 </tr>
                                 <tr>
                                     <td>password</td>
@@ -158,19 +157,6 @@
                                             <br>Una contraseña válida.
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>gettoken</td>
-                                    <td><span class="parameters_type">string</span> <em> <span
-                                                class="parameters_example">Example:
-                                                true </span>
-                                            <br>
-                                    </td>
-                                </tr>
-                                <tr>
-
-                                </tr>
-
-
                             </tbody>
 
                         </table>
@@ -178,49 +164,59 @@
                             {
                                 "code": 200,
                                 "status": "success",
-                                "token": "ecbebchdbchdbchdbchbdhcbh876663553.eyJjb2RlIedededmarNlc3MiLCJ1c2VyIjp7ImlkIjo4LCJuYW1lIjoiQXBwcmFpc2VyIFRlY2huaWNpYW4iLCJzdXJuYW1lIjoiQUJDYXJzIiwiZW1haWwiOiJ0ZWN2YWxAYWJjYXJzLm14IiwicGljdHVyZSI6bnVsbCwiZ2VuZGVyIjoibSIsImNyZWF0ZWRfYXQiOiIyMDIyLTA1LTA5VDE0OjUxOjMyLjAwMDAwMFoiLCJ1cGRhdGVkX2F0IjoiMjAyMi0wNS0wOVQxNDo1MTozMi4wMDAwMDBaIiwicm9sZXMiOlt7ImlkIjo2LCJuYW1lIjoiYXBwcmFpc2VyX3RlY2huaWNpYW4iLCJndWFyZF9uYW1lIjoid2ViIiwiY3JlYXRlZF9hdCI6IjIwMjItMDUtMDlUMTQ6NTE6MzEuMDAwMDAwWiIsInVwZGF0ZWRfYXQiOiIyMDIyLTA1LTA5VDE0OjUxOjMxLjAwMDAwMFoiLCJwaXZvdCI6eyJtb2RlbF9pZCI6OCwicm9sZV9pZCI6NiwibW9kZWxfdHlwZSI6IkFwcFxcTW9kZWxzXFxVc2poiuyftrseertyuio
-                            }
-                        </pre>
-                        <p>Response <code>200</code> Si las credenciales son erroneas</p>
-                        <pre class="brush: html">
-                            {
-                                "code": 200,
-                                "status": "error",
-                                "message": "Login incorrecto."
-                            }
-                        </pre>
-                        <p>Response <code>200</code> Si "token":false , la api retornara la información del usuario</p>
-                        <pre class="brush: html">
-                            {
-                                "code": 200,
-                                "status": "success",
-                                "user": {
-                                    "id": 8,
-                                    "name": "Appraiser Technician",
-                                    "surname": "ABCars",
-                                    "email": "tecval@abcars.mx",
-                                    "picture": null,
-                                    "gender": "m",
-                                    "created_at": "2022-05-09T14:51:32.000000Z",
-                                    "updated_at": "2022-05-09T14:51:32.000000Z",
-                                    "roles": [
-                                        {
-                                            "id": 6,
-                                            "name": "appraiser_technician",
-                                            "guard_name": "web",
-                                            "created_at": "2022-05-09T14:51:31.000000Z",
-                                            "updated_at": "2022-05-09T14:51:31.000000Z",
-                                            "pivot": {
-                                                "model_id": 8,
-                                                "role_id": 6,
-                                                "model_type": "App\\Models\\User"
+                                "data": {
+                                    "user": {
+                                        "id": 1,
+                                        "name": "revisor",
+                                        "email": "revisor@strega.com",
+                                        "email_verified_at": null,
+                                        "status": "active",
+                                        "picture": null,
+                                        "role_id": 2,
+                                        "created_at": "2022-11-03T21:52:48.000000Z",
+                                        "updated_at": "2022-11-03T21:52:48.000000Z",
+                                        "permissions": [
+                                            {
+                                                "id": 1,
+                                                "name": "dashboard",
+                                                "access": "view",
+                                                "created_at": "2022-11-03T21:52:48.000000Z",
+                                                "updated_at": "2022-11-03T21:52:48.000000Z",
+                                                "pivot": {
+                                                    "user_id": 1,
+                                                    "permission_id": 1
+                                                }
+                                            },
+                                            {
+                                                "id": 2,
+                                                "name": "assign",
+                                                "access": "control",
+                                                "created_at": "2022-11-03T21:52:48.000000Z",
+                                                "updated_at": "2022-11-03T21:52:48.000000Z",
+                                                "pivot": {
+                                                    "user_id": 1,
+                                                    "permission_id": 2
+                                                }
                                             }
+                                        ],
+                                        "role": {
+                                            "id": 2,
+                                            "name": "contact",
+                                            "created_at": null,
+                                            "updated_at": null
                                         }
-                                    ],
-                                    "permissions": []
-                                },
-                                "iat": 1652130971,
-                                "exp": 1652483771
+                                    },
+                                    "access_token": "6|X2XXXIEIEIDEDMMDMDNSJQO293",
+                                    "token_type": "Bearer"
+                                }
+                            }
+                        </pre>
+                        <p>Response <code>401</code> Si las credenciales son erroneas</p>
+                        <pre class="brush: html">
+                            {
+                                "code": 401,
+                                "status": "success",
+                                "message": "El usuario o contraseña son incorrectos"
                             }
                         </pre>
                     </section>
@@ -229,7 +225,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <p>
-                                    © Copyright 2021 | ABCars.mx
+                                    © Copyright 2021 | Strega
                                     Para obtener más información sobre verificación de licencias comuniquese a <a
                                         href="/cdn-cgi/l/email-protection#c6b5b3b6b6a9b4b286b5b2b4a3a1a7b5bfb5b2a3abe8a5a9ab"
                                         target="_blank"><span class="__cf_email__"
