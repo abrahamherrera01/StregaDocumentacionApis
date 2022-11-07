@@ -458,3 +458,6 @@ table td, table th {
 td {
     display: table-cell;
 }
+.logo{
+    width: 13% !important;
+}
